@@ -7,4 +7,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
+  base: '/react-v3-blended-starter/',
 });
