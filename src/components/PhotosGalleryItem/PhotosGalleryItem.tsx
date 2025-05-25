@@ -1,19 +1,20 @@
-import GridItem from "../GridItem/GridItem";
-
+import type { Photo } from "../../types/photo";
 import styles from "./PhotosGalleryItem.module.css";
 
-export default function PhotosGalleryItem() {
+interface PhotosGalleryItemProps {
+  image: Photo;
+}
+
+export default function PhotosGalleryItem({ image }: PhotosGalleryItemProps) {
   return (
-    <GridItem>
       <div
         className={styles.thumb}
         style={{
-          backgroundColor: "avg_color",
-          borderColor: "avg_color",
+          backgroundColor: image.avg_color,
+          borderColor: image.avg_color,
         }}
       >
-        <img src="" alt="" />
+        <img src={image.src.large} alt={image.alt} />
       </div>
-    </GridItem>
   );
 }
